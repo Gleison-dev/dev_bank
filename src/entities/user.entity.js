@@ -15,6 +15,11 @@ const UserEntity = database.define("tb_user", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  cpf: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    unique: true
+  },
   agency: {
     type: DataTypes.INTEGER,
     allowNull: false,
