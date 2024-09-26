@@ -73,13 +73,40 @@ class UserService {
       if (!verifyCpfAndPassword) {
         return `${ERRORS.CPF_PASSWORD_INCORRET}`;
       }
-      const updateBalance = await UserEntity.update({ balance: deposit }, {
-        where: {
-            cpf
+      const updateBalance = await UserEntity.update(
+        { balance: deposit },
+        {
+          where: {
+            cpf,
+          },
         }
+      );
+      return `${SUCESS.DEPOSIT}`;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  async deleteUser(cpf, password) {
+    try {
+      const verifyCpfAndPassword = await UserEntity.findOne({
+        where: {
+          cpf,
+          password,
+        },
+      });
+      if (!verifyCpfAndPassword) {
+        return `${ERRORS.NOT_FOUND}`;
+      }
+      const delUser = await UserEntity.destroy({
+        where: {
+          cpf,
+        },
       });
     } catch (error) {
       return error;
     }
   }
 }
+
+export { UserService }
