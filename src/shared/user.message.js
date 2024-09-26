@@ -10,3 +10,5 @@ const SUCESS = {
     WITHDRAWAL: "Saque realizado com sucesso!",
     TRANSFER: "Transferência realizada com sucesso!"
 }
+
+export { ERRORS, SUCESS }
