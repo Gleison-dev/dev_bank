@@ -103,10 +103,11 @@ class UserService {
           cpf,
         },
       });
+      return `${SUCESS.DELETED}`;
     } catch (error) {
       return error;
     }
   }
 }
 
-export { UserService }
+export { UserService };
