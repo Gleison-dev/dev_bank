@@ -9,7 +9,6 @@ class UserService {
     agency,
     account,
     password,
-    balance
   ) {
     try {
       await UserEntity.sync();
@@ -29,7 +28,6 @@ class UserService {
         agency,
         account,
         password,
-        balance,
       });
       return `${SUCESS.CREATED}`;
     } catch (error) {

@@ -16,27 +16,27 @@ const UserEntity = database.define("tb_user", {
     allowNull: false,
   },
   cpf: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.BIGINT,
     allowNull: false,
-    unique: true
+    unique: true,
   },
   agency: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  acount: {
+  account: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    unique: true
+    unique: true,
   },
   password: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+    type: DataTypes.STRING,
+    allowNull: false,
   },
   balance: {
-    type: DataTypes.DECIMAL,
+    type: DataTypes.DECIMAL(10, 2),
     defaultValue: 0,
   },
 });
 
-export { UserEntity }
+export { UserEntity };
