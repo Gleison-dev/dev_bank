@@ -34,7 +34,7 @@ const UserEntity = database.define("tb_user", {
     allowNull: false,
   },
   balance: {
-    type: DataTypes.DECIMAL(10, 2),
+    type: DataTypes.INTEGER,
     defaultValue: 0,
   },
 });

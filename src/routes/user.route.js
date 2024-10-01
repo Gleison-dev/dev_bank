@@ -11,8 +11,8 @@ const userRouter = Router();
 
 userRouter.post("/newUser", createUser);
 userRouter.get("/allUsers", getAllUsers);
-userRouter.get("/userByCpf:/cpf", getUserByCpf);
-userRouter.patch("/deposit:/cpf", depositService);
+userRouter.get("/userByCpf/:cpf", getUserByCpf);
+userRouter.patch("/deposit/:cpf", depositService);
 userRouter.delete("/deleteUser/:cpf", deleteUser);
 
 export { userRouter };

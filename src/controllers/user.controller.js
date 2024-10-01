@@ -25,7 +25,7 @@ const getAllUsers = async (req, res) => {
 const getUserByCpf = async (req, res) => {
   const { cpf } = req.params;
   const userByCpf = await userServiceInstance.getUserByCpfService(cpf);
-  res.status({ userByCpf });
+  res.json({ userByCpf });
 };
 
 const depositService = async (req, res) => {

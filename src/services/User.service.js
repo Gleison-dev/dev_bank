@@ -8,7 +8,7 @@ class UserService {
     cpf,
     agency,
     account,
-    password,
+    password
   ) {
     try {
       await UserEntity.sync();
@@ -60,7 +60,7 @@ class UserService {
     }
   }
 
-  async depositService(cpf, password, balance, deposit) {
+  async depositService(cpf, password, deposit) {
     try {
       const verifyCpfAndPassword = await UserEntity.findOne({
         where: {
@@ -71,7 +71,7 @@ class UserService {
       if (!verifyCpfAndPassword) {
         return `${ERRORS.CPF_PASSWORD_INCORRET}`;
       }
-      const updateBalance = await UserEntity.update(
+      const updateBalance = await UserEntity.increment(
         { balance: deposit },
         {
           where: {
