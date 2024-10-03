@@ -93,11 +93,11 @@ class UserService {
           password,
         },
       });
-      if(!verifyCpfAndPassword) {
-        return `${ERRORS.NOT_FOUND}`
+      if (!verifyCpfAndPassword) {
+        return `${ERRORS.CPF_PASSWORD_INCORRET}`;
       }
       const balance = await UserEntity.balance;
-      return `O Seu saldo é de: R$${balance}`
+      return `O Seu saldo é de: R$${balance}`;
     } catch (error) {
       return error;
     }
