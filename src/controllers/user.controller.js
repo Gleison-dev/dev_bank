@@ -39,6 +39,13 @@ const depositService = async (req, res) => {
   res.json({ serviceDeposit });
 };
 
+const checkBalance = async (req, res) => {
+  const { cpf } = req.params;
+  const { password } = req.body;
+  const balance = await userServiceInstance.checkBalance(cpf, password);
+  res.json({ balance });
+};
+
 const deleteUser = async (req, res) => {
   const { cpf } = req.params;
   const { password } = req.body;
@@ -46,4 +53,4 @@ const deleteUser = async (req, res) => {
   res.json({ delUser });
 };
 
-export { createUser, getAllUsers, getUserByCpf, depositService, deleteUser }
+export { createUser, getAllUsers, getUserByCpf, depositService, deleteUser };
