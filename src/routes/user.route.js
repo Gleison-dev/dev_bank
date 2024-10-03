@@ -7,7 +7,6 @@ import {
   checkBalance,
   deleteUser,
 } from "../controllers/user.controller.js";
-import { user } from "pg/lib/defaults.js";
 
 const userRouter = Router();
 
