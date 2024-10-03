@@ -4,14 +4,17 @@ import {
   getAllUsers,
   getUserByCpf,
   depositService,
+  checkBalance,
   deleteUser,
 } from "../controllers/user.controller.js";
+import { user } from "pg/lib/defaults.js";
 
 const userRouter = Router();
 
 userRouter.post("/newUser", createUser);
 userRouter.get("/allUsers", getAllUsers);
 userRouter.get("/userByCpf/:cpf", getUserByCpf);
+userRouter.get("/balance/:cpf", checkBalance);
 userRouter.patch("/deposit/:cpf", depositService);
 userRouter.delete("/deleteUser/:cpf", deleteUser);
 
