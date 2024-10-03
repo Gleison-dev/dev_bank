@@ -85,6 +85,24 @@ class UserService {
     }
   }
 
+  async checkBalance(cpf, password) {
+    try {
+      const verifyCpfAndPassword = await UserEntity.findOne({
+        where: {
+          cpf,
+          password,
+        },
+      });
+      if(!verifyCpfAndPassword) {
+        return `${ERRORS.NOT_FOUND}`
+      }
+      const balance = await UserEntity.balance;
+      return `O Seu saldo é de: R$${balance}`
+    } catch (error) {
+      return error;
+    }
+  }
+
   async deleteUser(cpf, password) {
     try {
       const verifyCpfAndPassword = await UserEntity.findOne({
