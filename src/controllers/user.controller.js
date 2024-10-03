@@ -53,4 +53,4 @@ const deleteUser = async (req, res) => {
   res.json({ delUser });
 };
 
-export { createUser, getAllUsers, getUserByCpf, depositService, deleteUser };
+export { createUser, getAllUsers, getUserByCpf, depositService, checkBalance, deleteUser };
